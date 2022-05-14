@@ -66,6 +66,7 @@ const initUI = () => {
 
     document.querySelector('#eventFilterInput').addEventListener("keyup", doFilter);
     document.querySelector('#eventFilterType').addEventListener("change", doFilter);
+    document.addEventListener("scroll", doFilter);
 }
 
 initUI();
