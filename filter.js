@@ -69,4 +69,17 @@ const initUI = () => {
     document.addEventListener("scroll", doFilter);
 }
 
-initUI();
+const startInit = () => {
+    const init = setInterval(() => {
+        try {
+            initUI();
+            clearInterval(init);
+        } catch (err) {
+            startInit();
+        }
+    }, 100);
+}
+
+if(window.location.href == 'https://app.traderepublic.com/profile') {
+    startInit();
+}
